@@ -1,21 +1,30 @@
 'use client';
 
 import AnimatedSection from './AnimatedSection';
-import {
-  Smartphone,
-  Laptop,
-  Tablet,
-  Headphones,
-  Watch,
-  ArrowRight,
-} from 'lucide-react';
+import BuybackWizard from './BuybackWizard';
+import { ArrowRight, Tablet, Monitor, Laptop, Watch } from 'lucide-react';
 
-const products = [
-  { icon: Smartphone, label: 'iPhone' },
-  { icon: Laptop, label: 'MacBook' },
-  { icon: Tablet, label: 'iPad' },
-  { icon: Headphones, label: 'AirPods' },
-  { icon: Watch, label: 'Apple Watch' },
+const otherDevices = [
+  {
+    icon: Tablet,
+    name: 'iPad',
+    maxPrice: '30 000',
+  },
+  {
+    icon: Monitor,
+    name: 'iMac',
+    maxPrice: '100 000',
+  },
+  {
+    icon: Laptop,
+    name: 'MacBook',
+    maxPrice: '100 000',
+  },
+  {
+    icon: Watch,
+    name: 'Apple Watch',
+    maxPrice: '15 000',
+  },
 ];
 
 export default function SalesSection() {
@@ -29,31 +38,33 @@ export default function SalesSection() {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
 
       <div className="container-narrow relative">
+        {/* ── Top: text + wizard ── */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left text */}
           <AnimatedSection direction="left">
             <div>
               <h2 className="heading-accent text-3xl sm:text-4xl font-extrabold text-white mb-4 after:bg-primary">
-                Prodej Apple zařízení
+                Prodej &amp; výkup Apple zařízení
               </h2>
               <p className="text-white/80 text-lg leading-relaxed mb-6">
                 Nabízíme nová i repasovaná Apple zařízení za výhodné ceny. Každý
                 produkt prochází pečlivou kontrolou a je dodáván
-                se&nbsp;zárukou.
+                se&nbsp;zárukou. Zároveň vykupujeme vaše staré
+                iPhony&nbsp;—&nbsp;zjistěte si cenu hned.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
                   'Nové produkty za konkurenční ceny',
                   'Certifikované repasované zařízení',
                   'Záruka na všechny produkty',
-                  'Příslušenství a ochranné doplňky',
+                  'Výkup starých iPhonů za férové ceny',
                 ].map((item, i) => (
                   <li
                     key={i}
                     className="flex items-center gap-2 text-white/80 text-sm"
                   >
                     <svg
-                      className="w-4 h-4 text-green-500 flex-shrink-0"
+                      className="w-4 h-4 text-primary flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -74,28 +85,58 @@ export default function SalesSection() {
             </div>
           </AnimatedSection>
 
-          {/* Right — product cards */}
+          {/* Right — Buyback wizard */}
           <AnimatedSection direction="right">
-            <div className="grid grid-cols-3 gap-3">
-              {products.map((prod, i) => {
-                const Icon = prod.icon;
+            <BuybackWizard />
+          </AnimatedSection>
+        </div>
+
+        {/* ── Bottom: Other devices grid ── */}
+        <AnimatedSection direction="up" delay={0.2}>
+          <div className="mt-20 md:mt-28">
+            <div className="text-center mb-10">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                Chceš prodat jiné zařízení než iPhone?
+              </h3>
+              <p className="text-white/60 text-sm sm:text-base">
+                Nejšťavnatější výkup kompletního sortimentu Apple!
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {otherDevices.map((device) => {
+                const Icon = device.icon;
                 return (
-                  <div
-                    key={i}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:bg-white/10 transition-colors"
+                  <a
+                    key={device.name}
+                    href="#kontakt"
+                    className="group flex items-center gap-5 bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-8 h-8 text-primary" />
                     </div>
-                    <span className="text-sm font-medium text-white">
-                      {prod.label}
-                    </span>
-                  </div>
+                    <div>
+                      <h4 className="text-white font-bold text-lg">
+                        {device.name}
+                      </h4>
+                      <p className="text-accent font-semibold text-sm">
+                        Výkup až {device.maxPrice}&nbsp;Kč
+                      </p>
+                    </div>
+                  </a>
                 );
               })}
             </div>
-          </AnimatedSection>
-        </div>
+
+            <p className="text-center text-white/50 text-sm mt-6">
+              V případě prodeje jiných zařízení než iPhone nás{' '}
+              <a href="#kontakt" className="text-primary hover:underline">
+                kontaktujte
+              </a>
+              .
+            </p>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
