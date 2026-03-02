@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'O nás', href: '#o-nas' },
@@ -27,15 +28,15 @@ export default function Header() {
     <>
       {/* Top info bar */}
       <div
-        className={`fixed top-0 left-0 right-0 z-50 bg-dark text-white/80 text-xs transition-all duration-300 overflow-hidden ${
+        className={`fixed top-0 left-0 right-0 z-50 bg-transparent text-white/80 text-xs transition-all duration-300 overflow-hidden ${
           scrolled ? 'h-0 opacity-0' : 'h-9 opacity-100'
         }`}
       >
-        <div className="container-narrow h-full flex items-center justify-between gap-4">
+        <div className="container-narrow h-full flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5">
-              <MapPin className="w-3 h-3" />
-              Kosmova 4, Brno
+            <span className="hidden sm:flex items-center gap-1.5">
+              <MapPin className="w-3 h-3 flex-shrink-0" />
+              Kosmova 4, 612 00 Brno
             </span>
             <span className="hidden sm:flex items-center gap-1.5">
               <Clock className="w-3 h-3" />
@@ -63,26 +64,15 @@ export default function Header() {
         <div className="container-narrow">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-                <span className="text-white font-extrabold text-sm">ES</span>
-              </div>
-              <div className="hidden sm:block">
-                <span
-                  className={`font-bold text-sm block leading-tight ${
-                    scrolled ? 'text-dark' : 'text-white'
-                  }`}
-                >
-                  Expres Servis
-                </span>
-                <span
-                  className={`text-xs ${
-                    scrolled ? 'text-gray-400' : 'text-white/70'
-                  }`}
-                >
-                  Apple
-                </span>
-              </div>
+            <a href="#home" className="flex items-center group">
+              <Image
+                src="/Logo/logo-expres-servis orange.png"
+                alt="Expres Servis Apple"
+                width={90}
+                height={40}
+                className="group-hover:scale-105 transition-transform"
+                priority
+              />
             </a>
 
             {/* Desktop nav */}

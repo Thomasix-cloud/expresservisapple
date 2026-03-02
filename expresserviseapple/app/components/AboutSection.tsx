@@ -39,7 +39,9 @@ export default function AboutSection() {
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-dark/80 to-transparent p-5">
                 <div className="flex items-center gap-2 text-white">
                   <MapPin className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">Kosmova 4, Brno</span>
+                  <span className="text-sm font-medium">
+                    Kosmova 4, 612 00 Brno
+                  </span>
                 </div>
               </div>
             </div>
@@ -98,7 +100,7 @@ export default function AboutSection() {
                   <span className="text-sm font-semibold text-dark">
                     Záruka
                   </span>
-                  <p className="text-xs text-white/70">24 měsíců na opravu</p>
+                  <p className="text-xs text-gray-500">24 měsíců na opravu</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -109,7 +111,7 @@ export default function AboutSection() {
                   <span className="text-sm font-semibold text-dark">
                     Originální díly
                   </span>
-                  <p className="text-xs text-white/70">Kvalita od výrobce</p>
+                  <p className="text-xs text-gray-500">Kvalita od výrobce</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -120,7 +122,7 @@ export default function AboutSection() {
                   <span className="text-sm font-semibold text-dark">
                     Expresní opravy
                   </span>
-                  <p className="text-xs text-white/70">Většina do hodiny</p>
+                  <p className="text-xs text-gray-500">Většina do hodiny</p>
                 </div>
               </div>
             </div>

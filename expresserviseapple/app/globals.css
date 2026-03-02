@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background: var(--color-background);
   color: var(--color-foreground);
   font-family:

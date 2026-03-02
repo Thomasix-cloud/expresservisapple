@@ -1,6 +1,7 @@
 'use client';
 
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'O nás', href: '#o-nas' },
@@ -18,16 +19,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-extrabold text-sm">ES</span>
-              </div>
-              <div>
-                <span className="text-white font-bold text-sm block leading-tight">
-                  Expres Servis
-                </span>
-                <span className="text-white text-xs">Apple</span>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/Logo/logo-expres-servis orange.png"
+                alt="Expres Servis Apple"
+                width={160}
+                height={72}
+              />
             </div>
             <p className="text-white text-sm leading-relaxed">
               Profesionální servis a opravy Apple zařízení v&nbsp;Brně.
@@ -79,7 +77,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-white">
                 <MapPin className="w-3.5 h-3.5" />
-                Kosmova 4, Brno
+                Kosmova 4, 612 00 Brno
               </li>
             </ul>
           </div>

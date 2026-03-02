@@ -20,7 +20,7 @@ const contactCards = [
   {
     icon: MapPin,
     label: 'Adresa',
-    value: 'Kosmova 4, Brno',
+    value: 'Kosmova 4, 612 00 Brno',
     href: 'https://maps.google.com/?q=Kosmova+4,+Brno',
   },
   {
