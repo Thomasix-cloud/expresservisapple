@@ -13,8 +13,8 @@ const steps = [
   },
   {
     icon: Search,
-    title: 'Diagnostika zdarma',
-    desc: 'Zařízení zdarma zdiagnostikujeme a sdělíme vám přesnou cenu opravy. Bez překvapení.',
+    title: 'Diagnostika a nacenění',
+    desc: 'Zařízení zdiagnostikujeme a sdělíme vám přesnou cenu opravy. Při provedení opravy je diagnostika zdarma.',
   },
   {
     icon: Wrench,
@@ -65,8 +65,8 @@ function TimelineStep({
           damping: 20,
         }}
         style={{
-          backgroundColor: isInView ? '#2563eb' : '#ffffff',
-          border: isInView ? 'none' : '2px solid #d4d4d8',
+          backgroundColor: isInView ? '#ff6b2c' : '#ffffff',
+          border: isInView ? 'none' : '2px solid #d2d2d7',
           color: '#ffffff',
         }}
       >
@@ -108,17 +108,17 @@ export default function ProcessSection() {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
-    <section id="postup" className="py-20 md:py-28 bg-white">
+    <section id="postup" className="py-20 md:py-28 bg-surface">
       <div className="container-narrow">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Left — sticky heading */}
           <div className="lg:col-span-2">
             <AnimatedSection direction="left">
               <div className="lg:sticky lg:top-32">
-                <h2 className="heading-accent text-3xl sm:text-4xl font-extrabold text-dark mb-4">
+                <h2 className="heading-accent text-3xl sm:text-4xl font-bold text-dark mb-4 tracking-tight">
                   Jak to funguje
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-text-secondary text-lg leading-relaxed">
                   Celý proces opravy je jednoduchý a transparentní — od prvního
                   kontaktu až po předání opraveného zařízení.
                 </p>

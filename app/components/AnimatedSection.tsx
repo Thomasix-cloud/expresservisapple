@@ -23,10 +23,10 @@ export default function AnimatedSection({
   });
 
   const directionOffset = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
+    up: { y: 16, x: 0 },
+    down: { y: -16, x: 0 },
+    left: { x: 16, y: 0 },
+    right: { x: -16, y: 0 },
     none: { x: 0, y: 0 },
   };
 
@@ -43,7 +43,7 @@ export default function AnimatedSection({
           : { opacity: 0, ...directionOffset[direction] }
       }
       transition={{
-        duration: 0.7,
+        duration: 0.55,
         delay,
         ease: [0.25, 0.4, 0.25, 1],
       }}

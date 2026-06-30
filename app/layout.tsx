@@ -11,9 +11,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Expres Servis Apple Brno | Expresní opravy iPhone, iPad, Mac',
+  metadataBase: new URL('https://www.expresservisapple.cz'),
+  title: 'Expres Servis Apple Brno | Opravy iPhone, iPad, MacBook na počkání',
   description:
-    'Expresní servis a opravy Apple zařízení v Brně. Opravy iPhone, iPad a MacBook na počkání. Originální díly, 24 měsíců záruka, bezkonkurenční ceny. Kosmova 4, Brno.',
+    'Expresní servis a opravy Apple zařízení v Brně. Opravy iPhone, iPad a MacBook do hodiny. Originální díly, 24 měsíců záruka, diagnostika zdarma při opravě. Kosmova 4, Brno.',
   keywords: [
     'servis apple brno',
     'oprava iphone brno',
@@ -25,14 +26,30 @@ export const metadata: Metadata = {
     'expresní oprava iphone',
   ],
   authors: [{ name: 'Expres Servis Apple Brno' }],
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://www.expresservisapple.cz' },
   openGraph: {
-    title: 'Expres Servis Apple Brno | Expresní opravy iPhone, iPad, Mac',
+    title: 'Expres Servis Apple Brno | Opravy iPhone, iPad, MacBook na počkání',
     description:
-      'Expresní servis a opravy Apple zařízení v Brně na počkání. Originální díly, 24 měsíců záruka.',
+      'Expresní servis Apple zařízení v Brně. Originální díly, 24 měsíců záruka, diagnostika zdarma při opravě.',
     url: 'https://www.expresservisapple.cz',
     siteName: 'Expres Servis Apple Brno',
     locale: 'cs_CZ',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Expres Servis Apple Brno',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Expres Servis Apple Brno',
+    description: 'Expresní opravy iPhone, iPad, MacBook v Brně. Na počkání.',
+    images: ['/og-image.jpg'],
   },
 };
 
@@ -56,12 +73,19 @@ export default function RootLayout({
               url: 'https://www.expresservisapple.cz',
               telephone: '+420777041184',
               email: 'info@expresservisapple.cz',
+              taxID: 'CZ07042515',
+              vatID: 'CZ07042515',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Kosmova 4',
                 addressLocality: 'Brno',
                 postalCode: '612 00',
                 addressCountry: 'CZ',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 49.1938,
+                longitude: 16.6037,
               },
               openingHoursSpecification: [
                 {
@@ -78,6 +102,7 @@ export default function RootLayout({
                 },
               ],
               priceRange: '$$',
+              image: 'https://www.expresservisapple.cz/og-image.jpg',
             }),
           }}
         />

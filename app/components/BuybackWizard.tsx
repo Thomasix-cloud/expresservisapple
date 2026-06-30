@@ -56,8 +56,8 @@ function YesNoButtons({
       onClick={onClick}
       className={`flex-1 py-3 rounded-xl text-sm font-semibold transition-all ${
         active
-          ? 'bg-primary text-white shadow-lg shadow-primary/30'
-          : 'bg-white/80 text-gray-600 hover:bg-blue-50'
+          ? 'bg-primary text-white shadow-md shadow-primary/25'
+          : 'bg-surface text-gray-600 hover:bg-gray-100 border border-border'
       }`}
     >
       {label}
@@ -95,8 +95,8 @@ function StepIndicator({ current, total }: { current: number; total: number }) {
                 isActive
                   ? 'w-8 h-3 bg-primary'
                   : isDone
-                    ? 'w-3 h-3 bg-primary/60'
-                    : 'w-3 h-3 bg-white/20'
+                    ? 'w-3 h-3 bg-primary/40'
+                    : 'w-3 h-3 bg-border'
               }`}
             />
           </div>
@@ -224,7 +224,7 @@ export default function BuybackWizard() {
               <button
                 type="button"
                 onClick={() => setDropdownOpen((o) => !o)}
-                className="w-full bg-white/90 border border-gray-200 rounded-xl px-4 py-3.5 text-left text-sm font-medium text-gray-700 flex justify-between items-center hover:border-primary/50 transition"
+                className="w-full bg-surface border border-border rounded-xl px-4 py-3.5 text-left text-sm font-medium text-dark flex justify-between items-center hover:border-primary/50 transition"
               >
                 {selectedModel
                   ? selectedModel.name
@@ -251,9 +251,9 @@ export default function BuybackWizard() {
                         setBentOrBroken(null);
                         setDropdownOpen(false);
                       }}
-                      className={`w-full px-4 py-2.5 text-left text-sm hover:bg-blue-50 transition ${
+                      className={`w-full px-4 py-2.5 text-left text-sm hover:bg-surface transition ${
                         selectedModel?.name === m.name
-                          ? 'text-primary font-semibold bg-blue-50/60'
+                          ? 'text-primary font-semibold bg-accent-light'
                           : 'text-gray-700'
                       }`}
                     >
@@ -278,17 +278,17 @@ export default function BuybackWizard() {
                   onClick={() => setSelectedStorage(i)}
                   className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
                     selectedStorage === i
-                      ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                      : 'bg-white/80 text-gray-600 hover:bg-blue-50'
+                      ? 'bg-primary text-white shadow-md shadow-primary/25'
+                      : 'bg-surface text-gray-600 hover:bg-gray-100 border border-border'
                   }`}
                 >
                   {s.label}
                 </button>
               ))}
             </div>
-            <p className="text-white/50 text-xs leading-relaxed">
-              💡 Velikost úložiště zjistíš v:{' '}
-              <span className="text-white/70">
+            <p className="text-text-secondary text-xs leading-relaxed">
+              Velikost úložiště zjistíš v:{' '}
+              <span className="text-dark font-medium">
                 Nastavení › Obecné › Úložiště
               </span>
             </p>
@@ -306,8 +306,8 @@ export default function BuybackWizard() {
                 onClick={() => setSelectedCondition(c.key)}
                 className={`w-full text-left rounded-xl px-4 py-3 transition-all ${
                   selectedCondition === c.key
-                    ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                    : 'bg-white/80 text-gray-700 hover:bg-blue-50'
+                    ? 'bg-primary text-white shadow-md shadow-primary/25'
+                    : 'bg-surface text-dark hover:bg-gray-100 border border-border'
                 }`}
               >
                 <span className="font-semibold text-sm">{c.label}</span>
@@ -315,7 +315,7 @@ export default function BuybackWizard() {
                   className={`block text-xs mt-0.5 ${
                     selectedCondition === c.key
                       ? 'text-white/80'
-                      : 'text-gray-500'
+                      : 'text-text-secondary'
                   }`}
                 >
                   {c.description}
@@ -334,9 +334,9 @@ export default function BuybackWizard() {
               onChange={setBatteryOk}
               positiveIsYes
             />
-            <p className="text-white/50 text-xs leading-relaxed">
-              💡 Kapacitu baterie zjistíš v:{' '}
-              <span className="text-white/70">
+            <p className="text-text-secondary text-xs leading-relaxed">
+              Kapacitu baterie zjistíš v:{' '}
+              <span className="text-dark font-medium">
                 Nastavení › Baterie › Stav baterie
               </span>
             </p>
@@ -372,8 +372,8 @@ export default function BuybackWizard() {
               onChange={setBentOrBroken}
               positiveIsYes={false}
             />
-            <p className="text-white/50 text-xs leading-relaxed">
-              💡 Jedná se o jakékoliv fyzické poškození, které znemožňuje běžné
+            <p className="text-text-secondary text-xs leading-relaxed">
+              Jedná se o jakékoliv fyzické poškození, které znemožňuje běžné
               používání telefonu.
             </p>
           </div>
@@ -384,9 +384,9 @@ export default function BuybackWizard() {
         return submitted ? (
           /* ─ Thank-you state ─ */
           <div className="text-center space-y-4">
-            <CheckCircle className="w-14 h-14 text-primary mx-auto" />
-            <h3 className="text-white text-xl font-bold">Děkujeme!</h3>
-            <p className="text-white/70 text-sm">
+            <CheckCircle className="w-14 h-14 text-green-500 mx-auto" />
+            <h3 className="text-dark text-xl font-bold">Děkujeme!</h3>
+            <p className="text-text-secondary text-sm">
               Ozveme se vám co nejdříve s&nbsp;finální nabídkou.
             </p>
             <button
@@ -415,7 +415,7 @@ export default function BuybackWizard() {
                 .map((tag) => (
                   <span
                     key={tag}
-                    className="bg-white/10 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full"
+                    className="bg-surface border border-border text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full"
                   >
                     {tag}
                   </span>
@@ -424,13 +424,13 @@ export default function BuybackWizard() {
 
             {/* Price */}
             <div className="text-center">
-              <p className="text-white/60 text-xs uppercase tracking-wider mb-1">
+              <p className="text-text-secondary text-xs uppercase tracking-wider mb-1">
                 Odhadovaná cena
               </p>
-              <p className="text-accent text-4xl font-extrabold">
+              <p className="text-primary text-4xl font-extrabold">
                 {estimatedPrice.toLocaleString('cs-CZ')}&nbsp;Kč
               </p>
-              <p className="text-white/40 text-[11px] mt-1">
+              <p className="text-text-secondary text-[11px] mt-1">
                 *&nbsp;Finální cena závisí na osobní diagnostice zařízení
               </p>
             </div>
@@ -442,21 +442,21 @@ export default function BuybackWizard() {
                 placeholder="Jméno a příjmení"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-white/90 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-sm text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
               />
               <input
                 type="email"
                 placeholder="E-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-white/90 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-sm text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
               />
               <input
                 type="tel"
                 placeholder="Telefon"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full bg-white/90 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full bg-surface border border-border rounded-xl px-4 py-3 text-sm text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
               />
               <button
                 type="button"
@@ -478,17 +478,17 @@ export default function BuybackWizard() {
 
   /* ─── ui ───────────────────────────────────────────────── */
   return (
-    <div className="relative rounded-2xl bg-gradient-to-br from-[#1e3a5f] via-[#2563eb]/80 to-[#1d4ed8] p-6 sm:p-8 shadow-2xl overflow-hidden min-h-[520px]">
+    <div className="relative rounded-2xl bg-white border border-border shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-6 sm:p-8 overflow-hidden min-h-[520px]">
       {/* Background decoration */}
-      <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/5 rounded-full blur-2xl" />
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute -top-16 -right-16 w-56 h-56 bg-primary/5 rounded-full blur-2xl" />
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 flex flex-col h-full min-h-[460px]">
         {/* Step indicator */}
         <StepIndicator current={step} total={stepsMeta.length} />
 
         {/* Step title */}
-        <h3 className="text-white font-bold text-lg sm:text-xl text-center mb-5">
+        <h3 className="text-dark font-bold text-lg sm:text-xl text-center mb-5">
           {stepTitle[step]}
         </h3>
 
@@ -515,7 +515,7 @@ export default function BuybackWizard() {
                 type="button"
                 onClick={handleBack}
                 disabled={step === 0}
-                className="flex items-center gap-1 text-white/60 hover:text-white text-sm font-medium disabled:opacity-0 transition"
+                className="flex items-center gap-1 text-text-secondary hover:text-dark text-sm font-medium disabled:opacity-0 transition"
               >
                 <ChevronLeft className="w-4 h-4" />
                 Zpět
@@ -524,7 +524,7 @@ export default function BuybackWizard() {
                 type="button"
                 onClick={handleNext}
                 disabled={!canProceed}
-                className="flex items-center gap-1 bg-white/20 hover:bg-white/30 disabled:opacity-30 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all"
+                className="flex items-center gap-1 bg-primary hover:bg-primary-hover disabled:opacity-30 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all"
               >
                 Pokračovat
                 <ChevronRight className="w-4 h-4" />
@@ -536,7 +536,7 @@ export default function BuybackWizard() {
             <button
               type="button"
               onClick={handleBack}
-              className="flex items-center gap-1 text-white/60 hover:text-white text-sm font-medium transition"
+              className="flex items-center gap-1 text-text-secondary hover:text-dark text-sm font-medium transition"
             >
               <ChevronLeft className="w-4 h-4" />
               Zpět
