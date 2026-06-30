@@ -7,6 +7,7 @@ const navLinks = [
   { label: 'Služby', href: '#sluzby' },
   { label: 'Ceník', href: '#cenik' },
   { label: 'Prodej & výkup', href: '#prodej' },
+  { label: 'Časté dotazy', href: '#faq' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 
@@ -57,42 +58,44 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-dark uppercase tracking-wider mb-4">
               Kontakt
             </h4>
-            <ul className="space-y-3 mb-5">
-              <li>
-                <a
-                  href="tel:+420777041184"
-                  className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 flex-shrink-0" />
-                  +420 777 041 184
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@expresservisapple.cz"
-                  className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary transition-colors"
-                >
-                  <Mail className="w-3.5 h-3.5 flex-shrink-0" />
-                  info@expresservisapple.cz
-                </a>
-              </li>
-              <li className="flex items-center gap-2 text-sm text-text-secondary">
-                <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-                Kosmova 4, 612 00 Brno
-              </li>
-            </ul>
-            <div className="text-sm text-text-secondary space-y-0.5">
-              <div className="flex justify-between max-w-[200px]">
-                <span>Po – Pá</span>
-                <span className="font-medium text-dark">8:30–18:00</span>
+            <address className="not-italic">
+              <ul className="space-y-3 mb-5">
+                <li>
+                  <a
+                    href="tel:+420777041184"
+                    className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 flex-shrink-0" />
+                    +420 777 041 184
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@expresservisapple.cz"
+                    className="flex items-center gap-2 text-sm text-text-secondary hover:text-primary transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5 flex-shrink-0" />
+                    info@expresservisapple.cz
+                  </a>
+                </li>
+                <li className="flex items-center gap-2 text-sm text-text-secondary">
+                  <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                  Kosmova 4, 612 00 Brno
+                </li>
+              </ul>
+              <div className="text-sm text-text-secondary space-y-0.5">
+                <div className="flex justify-between max-w-[200px]">
+                  <span>Po – Pá</span>
+                  <span className="font-medium text-dark">8:30–18:00</span>
+                </div>
+                <div className="flex justify-between max-w-[200px]">
+                  <span>So / Ne</span>
+                  <span className="text-text-secondary">
+                    Zavřeno (po domluvě)
+                  </span>
+                </div>
               </div>
-              <div className="flex justify-between max-w-[200px]">
-                <span>So / Ne</span>
-                <span className="text-text-secondary">
-                  Zavřeno (po domluvě)
-                </span>
-              </div>
-            </div>
+            </address>
           </div>
         </div>
 

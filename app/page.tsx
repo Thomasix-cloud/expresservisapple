@@ -5,6 +5,7 @@ import ProcessSection from './components/ProcessSection';
 import PricingSection from './components/PricingSection';
 import GallerySection from './components/GallerySection';
 import SalesSection from './components/SalesSection';
+import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <PricingSection />
       <GallerySection />
       <SalesSection />
+      <FAQSection />
       <ContactSection />
     </>
   );

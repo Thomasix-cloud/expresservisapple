@@ -114,7 +114,7 @@ export default function PricingSection() {
               </div>
             )}
 
-            {/* Price rows — table on desktop, cards on mobile */}
+            {/* Price rows — single semantic table */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedModel.id}
@@ -123,48 +123,58 @@ export default function PricingSection() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.18 }}
               >
-                {/* Desktop table */}
-                <div className="hidden sm:block divide-y divide-gray-50">
-                  {selectedModel.repairs.map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between px-5 md:px-8 py-3.5 hover:bg-surface/50 transition-colors gap-4"
-                    >
-                      <span className="text-sm text-gray-700">{item.name}</span>
-                      <span className="text-sm font-bold text-dark whitespace-nowrap flex items-center gap-2 flex-shrink-0">
-                        {formatPrice(item.price)}
-                        {item.time && (
-                          <span className="inline-flex items-center gap-0.5 text-xs font-medium text-gray-400">
-                            <Clock className="w-3 h-3" />
-                            {item.time}&nbsp;min
-                          </span>
-                        )}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Mobile cards */}
-                <div className="sm:hidden divide-y divide-border">
-                  {selectedModel.repairs.map((item, i) => (
-                    <div key={i} className="px-5 py-3.5">
-                      <p className="text-sm font-medium text-dark mb-1">
-                        {item.name}
-                      </p>
-                      <div className="flex items-center gap-3 text-sm">
-                        <span className="font-bold text-primary">
+                <table className="w-full border-collapse">
+                  <caption className="sr-only">
+                    Ceník oprav pro {selectedModel.name}
+                  </caption>
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th
+                        scope="col"
+                        className="px-5 md:px-8 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-400"
+                      >
+                        Služba
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-3 md:px-8 py-3 text-right text-xs font-semibold uppercase tracking-wider text-gray-400"
+                      >
+                        Cena
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-5 md:px-8 py-3 text-right text-xs font-semibold uppercase tracking-wider text-gray-400"
+                      >
+                        Čas
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-50">
+                    {selectedModel.repairs.map((item, i) => (
+                      <tr
+                        key={i}
+                        className="hover:bg-surface/50 transition-colors"
+                      >
+                        <td className="px-5 md:px-8 py-3.5 text-sm text-gray-700">
+                          {item.name}
+                        </td>
+                        <td className="px-3 md:px-8 py-3.5 text-right text-sm font-bold text-dark whitespace-nowrap">
                           {formatPrice(item.price)}
-                        </span>
-                        {item.time && (
-                          <span className="inline-flex items-center gap-0.5 text-xs text-gray-400">
-                            <Clock className="w-3 h-3" />
-                            {item.time}&nbsp;min
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                        </td>
+                        <td className="px-5 md:px-8 py-3.5 text-right text-xs font-medium text-gray-400 whitespace-nowrap">
+                          {item.time ? (
+                            <span className="inline-flex items-center gap-0.5">
+                              <Clock className="w-3 h-3" />
+                              {item.time}&nbsp;min
+                            </span>
+                          ) : (
+                            <span aria-hidden="true">-</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </motion.div>
             </AnimatePresence>
 
@@ -183,7 +193,7 @@ export default function PricingSection() {
               <p className="text-sm text-dark">
                 Nejste si jisti?{' '}
                 <span className="text-primary font-semibold">
-                  Diagnostika je zdarma při provedení opravy.
+                  Diagnostika je zdarma při realizaci opravy.
                 </span>
               </p>
               <a

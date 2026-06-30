@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Služby', href: '#sluzby' },
   { label: 'Ceník', href: '#cenik' },
   { label: 'Prodej & výkup', href: '#prodej' },
+  { label: 'Časté dotazy', href: '#faq' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 

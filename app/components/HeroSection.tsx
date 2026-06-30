@@ -36,7 +36,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-text-secondary text-lg leading-relaxed mb-9 max-w-lg">
-              Expresní servis Apple zařízení — iPhone, iPad i MacBook — s
+              Expresní servis Apple zařízení (iPhone, iPad i MacBook) s
               24měsíční zárukou. Většina oprav do hodiny.
             </p>
 
@@ -88,7 +88,7 @@ export default function HeroSection() {
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-[0_4px_40px_rgba(0,0,0,0.1)]">
               <Image
                 src="/galerie/hero.jpg"
-                alt="Expres Servis Apple — opravna Apple zařízení v Brně"
+                alt="Expres Servis Apple, opravna Apple zařízení v Brně"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -98,7 +98,7 @@ export default function HeroSection() {
             {/* Floating accent badge */}
             <div className="absolute -bottom-4 -left-6 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12)] px-5 py-3.5">
               <p className="text-xs text-text-secondary mb-0.5">Diagnostika</p>
-              <p className="text-xl font-bold text-dark">Zdarma při opravě</p>
+              <p className="text-xl font-bold text-dark">Zdarma k opravě</p>
             </div>
           </motion.div>
         </div>

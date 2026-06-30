@@ -22,7 +22,7 @@ const services = [
     title: 'iPad servis',
     icon: Tablet,
     from: '1 490',
-    desc: 'Opravy iPadů všech generací — displej, baterie, konektor i tlačítka.',
+    desc: 'Opravy iPadů všech generací: displej, baterie, konektor i tlačítka.',
     repairs: [
       'Výměna displeje',
       'Výměna baterie',
@@ -36,7 +36,7 @@ const services = [
     title: 'MacBook servis',
     icon: Laptop,
     from: '1 990',
-    desc: 'Servis MacBooků Air i Pro — klávesnice, displeje, SSD upgrade a opravy logické desky.',
+    desc: 'Servis MacBooků Air i Pro: klávesnice, displeje, SSD upgrade a opravy logické desky.',
     repairs: [
       'Výměna displeje',
       'Výměna klávesnice',

@@ -26,7 +26,7 @@ export default function ContactSection() {
               Kontakt
             </h2>
             <p className="text-text-secondary text-lg leading-relaxed">
-              Přijďte k nám nebo nás kontaktujte — rádi vám poradíme a pomůžeme.
+              Přijďte k nám nebo nás kontaktujte, rádi vám poradíme a pomůžeme.
             </p>
           </div>
         </AnimatedSection>
@@ -120,12 +120,12 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa — Expres Servis Apple, Kosmova 4, Brno"
+                title="Mapa: Expres Servis Apple, Kosmova 4, Brno"
               />
             </div>
 
             {/* Contact cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <address className="grid grid-cols-1 sm:grid-cols-2 gap-3 not-italic">
               <a
                 href="tel:+420777041184"
                 className="bg-white rounded-xl p-4 border border-border hover:border-primary/40 transition-colors group"
@@ -203,7 +203,7 @@ export default function ContactSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </address>
           </AnimatedSection>
         </div>
       </div>

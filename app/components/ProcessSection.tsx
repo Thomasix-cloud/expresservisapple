@@ -14,7 +14,7 @@ const steps = [
   {
     icon: Search,
     title: 'Diagnostika a nacenění',
-    desc: 'Zařízení zdiagnostikujeme a sdělíme vám přesnou cenu opravy. Při provedení opravy je diagnostika zdarma.',
+    desc: 'Zařízení zdiagnostikujeme a sdělíme vám přesnou cenu opravy. Při realizaci opravy je diagnostika zdarma.',
   },
   {
     icon: Wrench,
@@ -119,7 +119,7 @@ export default function ProcessSection() {
                   Jak to funguje
                 </h2>
                 <p className="text-text-secondary text-lg leading-relaxed">
-                  Celý proces opravy je jednoduchý a transparentní — od prvního
+                  Celý proces opravy je jednoduchý a transparentní, od prvního
                   kontaktu až po předání opraveného zařízení.
                 </p>
               </div>
